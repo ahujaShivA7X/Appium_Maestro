@@ -1,3 +1,4 @@
+import Utils.PropertyReader;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -10,8 +11,11 @@ import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Properties;
 
 public class AppiumTest {
+
+    private static Properties property = PropertyReader.getProperty();
 
 
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
@@ -23,7 +27,7 @@ public class AppiumTest {
         capabilities.setCapability("autoGrantPermissions", "true");
         capabilities.setCapability("unicodeKeyboard", false);
         capabilities.setCapability("resetKeyboard", false);
-        capabilities.setCapability("app", "/Users/aakashjindal/Documents/untitled folder/appiumFw1/bigBAppium/bigbasket-7-11-6.apk");
+        capabilities.setCapability("app", "src/test/resources/bigbasket-7-11-6.apk");
         //caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "your.app.package");
         //caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "your.app.MainActivity");
 

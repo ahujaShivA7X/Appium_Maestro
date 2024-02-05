@@ -4,7 +4,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class LoginPage extends BasePage {
@@ -33,4 +32,26 @@ public class LoginPage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(avjHeightsMarket)).click();
         wait.until(ExpectedConditions.elementToBeClickable(useThisLocationButton)).click();
     }
+
+//    public static String getTextFromMessage(Message message) throws Exception {
+//        if (message.isMimeType("text/plain")){
+//            return message.getContent().toString();
+//        }else if (message.isMimeType("multipart/*")) {
+//            String result = "";
+//            MimeMultipart mimeMultipart = (MimeMultipart)message.getContent();
+//            int count = mimeMultipart.getCount();
+//            for (int i = 0; i < count; i ++){
+//                BodyPart bodyPart = mimeMultipart.getBodyPart(i);
+//                if (bodyPart.isMimeType("text/plain")){
+//                    result = result + "\n" + bodyPart.getContent();
+//                    break;
+//                } else if (bodyPart.isMimeType("text/html")){
+//                    String html = (String) bodyPart.getContent();
+//                    result = result + "\n" + Jsoup.parse(html).text();
+//                }
+//            }
+//            return result;
+//        }
+//        return "";
+//    }
 }
